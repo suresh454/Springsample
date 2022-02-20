@@ -43,7 +43,7 @@ public class MovieCatalogResource {
                    //Using webclient
               /*Movie movie = webClientBuilder.build().get().uri("http://localhost:8082/movies/"+ rating.getMovieId())
                             .retrieve().bodyToMono(Movie.class).block();*/
-              return  new CatalogItem(movie.getName(), "test", rating.getRating());
+              return  new CatalogItem(movie.getName(), movie.getMovieOverview(), rating.getRating());
         }
         ).collect(Collectors.toList());
 
